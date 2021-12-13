@@ -8,13 +8,13 @@ from youtube_dl import YoutubeDL
 
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix="s!", help_command=None)
+bot = commands.Bot(command_prefix = "s!", help_command = None)
 
 token = ""
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(status=discord.Status.idle, activity=discord.Game("s!help"))
+    await bot.change_presence(status = discord.Status.idle, activity = discord.Game("s!help"))
     print("SPINE BOT IS READY")
 
 @bot.event
@@ -23,13 +23,13 @@ async def on_message(message):
 
 @bot.command()
 async def help(ctx):
-    emBed = discord.Embed(title="Spinebot Commands", description="คำสั่งทั้งหมด", color=0x5a49e3)
-    emBed.add_field(name="s!help", value="📋║คำสั่งที่สามารถใช้ได้", inline=False)
-    emBed.add_field(name="s!play", value="🧿║เล่นเพลง s!play + url/name", inline=False)
-    emBed.add_field(name="s!pause", value="🔈║หยุดเพลงที่เล่น", inline=False)
-    emBed.add_field(name="s!resume", value="🔊║เล่นเพลงต่อจากเดิม", inline=False)
-    emBed.add_field(name="s!stop", value="🔇║หยุดเพลง", inline=False)
-    emBed.add_field(name="s!leave", value="👣║ออกจากห้อง", inline=False)
+    emBed = discord.Embed(title = "Spinebot Commands", description = "คำสั่งทั้งหมด", color = 0x5a49e3)
+    emBed.add_field(name = "s!help", value="📋║คำสั่งที่สามารถใช้ได้", inline = False)
+    emBed.add_field(name = "s!play", value="🧿║เล่นเพลง s!play + url/name", inline = False)
+    emBed.add_field(name = "s!pause", value="🔈║หยุดเพลงที่เล่น", inline = False)
+    emBed.add_field(name = "s!resume", value="🔊║เล่นเพลงต่อจากเดิม", inline = False)
+    emBed.add_field(name = "s!stop", value="🔇║หยุดเพลง", inline = False)
+    emBed.add_field(name = "s!leave", value="👣║ออกจากห้อง", inline = False)
     emBed.set_thumbnail(url="https://cdn.discordapp.com/attachments/861386789952290826/902391108112363581/Spine-logos.jpeg")
     emBed.set_footer(text="SpineBot", icon_url="https://cdn.discordapp.com/attachments/861386789952290826/902391108112363581/Spine-logos.jpeg")
     await ctx.channel.send(embed=emBed)
