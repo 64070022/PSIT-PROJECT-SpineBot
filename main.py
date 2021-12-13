@@ -91,4 +91,4 @@ async def leave(ctx):
     elif voice_client.channel == ctx.author.voice.channel:
         await ctx.voice_client.disconnect()
 
-bot.run('123')
+bot.run('')
