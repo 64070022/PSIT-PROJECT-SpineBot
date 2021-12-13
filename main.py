@@ -10,6 +10,8 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix="s!", help_command=None)
 
+token = ""
+
 @bot.event
 async def on_ready():
     await bot.change_presence(status=discord.Status.idle, activity=discord.Game("s!help"))
@@ -91,4 +93,4 @@ async def leave(ctx):
     elif voice_client.channel == ctx.author.voice.channel:
         await ctx.voice_client.disconnect()
 
-bot.run('')
+bot.run(token)
